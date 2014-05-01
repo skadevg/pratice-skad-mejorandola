@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<title>JUEGUITOS JUEGUITOS</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript">
+	</script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+				var lienzo = $("#lienzo")[0];
+				var lWidth=$("#lienzo").width();
+				var lHeight=$("#lienzo").height();
+				
+
+				var ctx = lienzo.getContext("2d");
+				
+				function setBackground(){
+					//guarda todos los atributos y elementos del contexto
+					ctx.save()
+
+					ctx.fillStyle = "white";
+					ctx.fillRect(0,0,lWidth,lHeight);	
+
+					ctx.strokeStyle="black";
+					ctx.lineWidth=3;
+					ctx.strokeRect(0,0,lWidth,lHeight);
+						
+					//volver al punto al que hemos guardado
+					ctx.restore();
+				}	
+
+				//jugadores
+				function setPlayer(color,x,y,width,height){
+					ctx.save();
+					ctx.fillStyle=color;
+					ctx.fillRect(x,y,width,height);
+
+					ctx.restore();
+
+					// asi el contexto quedara siempre como estaba
+				}
+
+
+				setBackground();
+				//////////////////////////PLAYERS	
+					//ctx.fillStyle="aqua";
+					/*
+					setPlayer("red",10,220,20,20);
+
+					
+					//ctx.fillStyle="lime";
+					setPlayer("blue",300,260,20,20);
+
+					ctx.fillRect(250,40,20,20);
+					*/
+
+			//	console.log(ctx);
+
+				function degreeToRadian(grado){
+
+					return (grado*Math.PI)/180;
+				}
+
+				//ARCOS Y CIRCULOS
+
+
+				ctx.arc(40,40,30,degreeToRadian(0),degreeToRadian(360));
+				ctx.stroke();
+				//coordenadas, radio , punto comienzo, punto fin, (opcional true o false)
+
+		})
+
+	</script>
+
+	
+
+</head>
+
+
+<body>
+	
+	<canvas id="lienzo" width="500" height="350">
+
+		
+
+	</canvas>
+
+
+</body>
+
+</html>

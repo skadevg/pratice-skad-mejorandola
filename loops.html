@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>usandola</title>
+</head>
+<body onload="relojito()">
+
+<script type="text/javascript">
+	
+//for(var x=0;x<10;x+=4){
+
+//document.write("esto se repite"+x+"veces"+"<br/>");
+//}
+
+//var x=1  whilre(x<2){document.write("s") x++};
+var texto ="Esto es algo muy interesante ";
+
+//document.write(texto.length);
+
+function construct( edad, ara){
+
+this.edad=edad;
+this.ara=ara
+
+}
+
+var mar= new construct(12,23);
+
+
+
+//constructor mas facil
+
+// jorge ={nombre:"Raki", edad:30, altura:1.63}
+
+
+
+//document.getElementById("busca por id en el doc").inner HTML="CAMBIA DENTRO EL HTML"
+//date y array var coche = new Array("ford","audi");
+function relojito(){
+	var x = new Date();
+	var hora = x.getHours();
+
+	var minuto = x.getMinutes();
+
+	var segundo= x.getSeconds();
+
+	if(segundo<10){ segundo="0"+segundo;}
+	if(hora<10){ hora="0"+hora;}
+	if(minuto<10){ minuto="0"+minuto;}
+
+	var recarga=setTimeout('relojito()',500);
+	document.getElementById('reloj').innerHTML= hora+" : "+minuto+" : "+segundo;
+}
+
+</script>
+
+<!--      
+<form>
+	
+	<input type="button" value="pinccha" onclick="alert('Cuidado');" />
+
+</form>
+
+ -->
+ <div id="reloj">
+ 	
+
+ </div>
+
+
+
+
+</body>
+</html>
